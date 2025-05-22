@@ -15,6 +15,6 @@ jobs:
       - name: trigger event
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           repository: emelenthia/github-actions-test-A
           event-type: run-github-actions-test-a
