@@ -13,8 +13,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: trigger event
-        uses: peter-evans/repository-dispatch@v2
+        uses: actions/github-script@v7
         with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          repository: emelenthia/github-actions-test-A
-          event-type: run-github-actions-test-a
+          github-token: ${{ secrets.PERSONAL_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'emelenthia',
+              repo: 'github-actions-test-A',
+              event_type: 'run-github-actions-test-a'
+            })
