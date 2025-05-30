@@ -30,5 +30,10 @@ jobs:
             await github.rest.repos.createDispatchEvent({
               owner: 'emelenthia',
               repo: 'github-actions-test-A',
-              event_type: 'run-github-actions-test-a-3rd'
+              event_type: 'run-github-actions-test-a-3rd',
+              client_payload: {
+                ref: '${{ context.ref }}',
+                sha: '${{ github.sha }}',
+                repository: '${{ github.repository }}'
+              }
             })
