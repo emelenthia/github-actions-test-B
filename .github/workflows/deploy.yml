@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print repository_dispatch event info
+      - name: Print repository_dispatch event info2
         run: |
           echo "トリガーイベント: ${{ github.event_name }}"
           echo "送信元リポジトリ: ${{ github.event.repository.full_name }}"
