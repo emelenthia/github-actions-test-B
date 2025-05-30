@@ -32,7 +32,7 @@ jobs:
               repo: 'github-actions-test-A',
               event_type: 'run-github-actions-test-a-3rd',
               client_payload: {
-                ref: '${{ context.ref }}',
+                ref: '${{ github.ref }}',
                 sha: '${{ github.sha }}',
                 repository: '${{ github.repository }}'
               }
